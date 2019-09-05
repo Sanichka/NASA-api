@@ -43,6 +43,12 @@ def big_hazardous():
     pass
 
 if __name__ == '__main__':
+    choice = 1
     get_closest_asteroids_first()
     verify_count()
     find_hazardous()
+
+    if choice == 2:
+        loop = asyncio.get_event_loop()
+        loop.run_until_complete(get_closest_asteroids_second())
+    else: verify_count()
